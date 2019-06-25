@@ -1,0 +1,22 @@
+service: text-to-tweet
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'dev'}
+  environment:
+    TWITTER_CONSUMER_KEY: ${file(./keys.${self:provider.stage}.yml):TWITTER_CONSUMER_KEY}
+    TWITTER_CONSUMER_SECRET: ${file(./keys.${self:provider.stage}.yml):TWITTER_CONSUMER_SECRET}
+    TWITTER_ACCESS_TOKEN_KEY: ${file(./keys.${self:provider.stage}.yml):TWITTER_ACCESS_TOKEN_KEY}
+    TWITTER_ACCESS_TOKEN_SECRET: ${file(./keys.${self:provider.stage}.yml):TWITTER_ACCESS_TOKEN_SECRET}
+
+functions:
+  smsReceived:
+    handler: handler.smsReceived
+    events:
+      - http:
+          path: smsreceived
+          method: post
+
+plugins:
+  - serverless-mocha-plugin

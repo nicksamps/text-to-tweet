@@ -1,0 +1,29 @@
+{
+  "name": "text-to-tweet",
+  "version": "1.0.0",
+  "description": "A simple service to turn a text into a tweet",
+  "main": "handler.js",
+  "dependencies": {
+    "serverless-mocha-plugin": "^1.10.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicksamps/text-to-tweet.git"
+  },
+  "keywords": [
+    "tweet",
+    "text",
+    "sms"
+  ],
+  "author": "nicksamps",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/nicksamps/text-to-tweet/issues"
+  },
+  "homepage": "https://github.com/nicksamps/text-to-tweet#readme"
+}
