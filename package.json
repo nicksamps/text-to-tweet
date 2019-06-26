@@ -4,10 +4,13 @@
   "description": "A simple service to turn a text into a tweet",
   "main": "handler.js",
   "dependencies": {
-    "serverless-mocha-plugin": "^1.10.0",
     "twit": "^2.2.11"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "serverless-mocha-plugin": "^1.10.0",
+    "sinon": "^7.3.2"
+  },
   "scripts": {
     "test": "mocha"
   },
