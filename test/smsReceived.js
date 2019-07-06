@@ -8,11 +8,12 @@ const expect = mochaPlugin.chai.expect;
 const helpers = require('../helpers');
 const sinon = require('sinon');
 let wrapped = mochaPlugin.getWrapper('smsReceived', '/handler.js', 'smsReceived');
+const REQUIRED_SUBSTRING = process.env.REQUIRED_SUBSTRING;
 
 describe('smsReceived', () => {
   beforeEach((done) => {
     this.event = {
-      body: 'Body=Tweet tweet'
+      body: `Body=Tweet tweet ${REQUIRED_SUBSTRING}`
     };
 
     this.postStub = sinon.stub();
@@ -31,6 +32,13 @@ describe('smsReceived', () => {
   it('post called correctly', () => {
     return wrapped.run(this.event).then((response) => {
       expect(this.postStub.calledWith('statuses/update', {status: 'Tweet tweet'})).to.be.true;
+    });
+  });
+
+  it('post not called if REQUIRED_SUBSTRING missing', () => {
+    this.event.body = this.event.body.replace(REQUIRED_SUBSTRING, '');
+    return wrapped.run(this.event).then((response) => {
+      expect(this.postStub.called).to.be.false;
     });
   });
 

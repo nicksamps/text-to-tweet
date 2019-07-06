@@ -7,6 +7,7 @@ A simple service to turn a text into a tweet. My use case for this is for me to 
 1. Setup a Twilio account
 1. Setup a Twitter account and Twitter app to get the credentials needed for the next step
 1. Set up a `keys.dev.yml`, `keys.test.yml` and do the same for any other environments (see example below)
+  - `REQUIRED_SUBSTRING` is a value that needs to be in the SMS message for the tweet to posted. The string itself is removed from the tweet and the remaining string is 'trimmed' to remove spaces from the beginning / end of the string.
 1. To deploy run `serverless deploy -v` (you can optionally add the `--stage ENV_NAME` flag otherwise it defaults to `dev`)
 1. Copy the endpoint from the `Stack Outputs` ending in `smsreceived` and add it as one of your number`s SMS webhook hook in the Twilio console
 1. Send a text message to the number from the previous step and you should see that message show up as a tweet on your Twitter account
@@ -17,4 +18,5 @@ TWITTER_CONSUMER_KEY: EXAMPLE_TWITTER_CONSUMER_KEY
 TWITTER_CONSUMER_SECRET: EXAMPLE_TWITTER_CONSUMER_SECRET
 TWITTER_ACCESS_TOKEN_KEY: EXAMPLE_TWITTER_ACCESS_TOKEN_KEY
 TWITTER_ACCESS_TOKEN_SECRET: EXAMPLE_TWITTER_ACCESS_TOKEN_SECRET
+REQUIRED_SUBSTRING: EXAMPLE_REQUIRED_SUBSTRING
 ```

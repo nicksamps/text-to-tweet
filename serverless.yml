@@ -9,6 +9,7 @@ provider:
     TWITTER_CONSUMER_SECRET: ${file(./keys.${self:provider.stage}.yml):TWITTER_CONSUMER_SECRET}
     TWITTER_ACCESS_TOKEN_KEY: ${file(./keys.${self:provider.stage}.yml):TWITTER_ACCESS_TOKEN_KEY}
     TWITTER_ACCESS_TOKEN_SECRET: ${file(./keys.${self:provider.stage}.yml):TWITTER_ACCESS_TOKEN_SECRET}
+    REQUIRED_SUBSTRING: ${file(./keys.${self:provider.stage}.yml):REQUIRED_SUBSTRING}
 
 functions:
   smsReceived:
