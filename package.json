@@ -5,7 +5,8 @@
   "main": "handler.js",
   "dependencies": {
     "twit": "^2.2.11",
-    "diff": ">=3.5.0"
+    "diff": ">=3.5.0",
+    "lodash": ">=4.17.13"
   },
   "devDependencies": {
     "chai": "^4.2.0",
