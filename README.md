@@ -1,5 +1,5 @@
 # text-to-tweet
-A simple service to turn a text into a tweet. My use case for this is for me to be able to tweet via my Somewear satellite messenger device. The Somewear can text US/CA phone numbers via satellite so all I need to do is turn a text into a tweet. [Twitter's text to tweet service](https://help.twitter.com/en/using-twitter/twitter-sms) won't work for this as it needs to be tied to my phone number, which won't work in this case as the texts will be coming from Somewear's phone numbers.
+A simple service to turn a text into a tweet. My use case for this is for me to be able to tweet via my Somewear satellite messenger device. The Somewear can text US/CA phone numbers via satellite so all I need to do is turn a text into a tweet. [Twitter's text to tweet service](https://help.twitter.com/en/using-twitter/twitter-sms) won't work for this as it needs to be tied to my phone number, which won't work in this case as the texts will be coming from Somewear's phone numbers which could theoretically change at any time.
 
 ## Setup
 
